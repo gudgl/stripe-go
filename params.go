@@ -152,6 +152,11 @@ func (p *ListParams) SetStripeAccount(val string) {
 	p.StripeAccount = &val
 }
 
+// SetContext sets a value for the Context used for request.
+func (p *ListParams) SetContext(ctx context.Context) {
+	p.Context = ctx
+}
+
 // ToParams converts a ListParams to a Params by moving over any fields that
 // have valid targets in the new type. This is useful because fields in
 // Params can be injected directly into an http.Request while generally
@@ -237,6 +242,11 @@ func (p *Params) SetIdempotencyKey(val string) {
 // SetStripeAccount sets a value for the Stripe-Account header.
 func (p *Params) SetStripeAccount(val string) {
 	p.StripeAccount = &val
+}
+
+// SetContext sets a value for the Context used for request.
+func (p *Params) SetContext(ctx context.Context) {
+	p.Context = ctx
 }
 
 // ParamsContainer is a general interface for which all parameter structs
